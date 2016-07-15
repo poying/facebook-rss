@@ -1,15 +1,14 @@
 module Main where
 
 
-import Text.RSS
-import Network.HTTP
+import FacebookRSS
 import Options.Applicative
 
 
 data App = App
   { token :: String
   , id :: String
-  }
+  } deriving (Show)
 
 
 app :: Parser App
@@ -33,17 +32,7 @@ main = execParser opts >>= run
 
 
 run :: App -> IO ()
-run (App token id) = return ()
-
-
-getFeedRequest :: String -> String -> IO String
-getFeedRequest token id =
-  simpleHTTP (getRequest (genRequestUrl token id)) >>= getResponseBody
-
-
-genRequestUrl :: String -> String -> String
-genRequestUrl token id =
-  "https://graph.facebook.com/v2.7/"
-  ++ id
-  ++ "?access_token=" ++ token
-  ++ "&fields=name,about,link,feed"
+run (App token id) = p =<< generate token id
+  where
+    p (Just str) = putStrLn str
+    p _ = putStrLn "Something is wrong..."
