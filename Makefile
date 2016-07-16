@@ -1,6 +1,12 @@
 LIST := freemarketfreepeople
 TARGETS := $(addprefix feeds/,$(LIST))
 
+all: generate push
+
+push:
+	@git add feeds
+	@git commit -m "$$(date "+%Y-%m-%d %H:%M:%S")"
+
 generate: install $(TARGETS)
 
 feeds/%: feeds
