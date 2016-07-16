@@ -11,7 +11,7 @@ generate: install $(TARGETS)
 
 feeds/%: feeds
 	@echo $@
-	@./fb-rss --token $(FACEBOOK_TOKEN) --id $$(basename $@)
+	@./fb-rss --token $(FACEBOOK_TOKEN) --id "$$(basename $@)"
 
 feeds:
 	@-mkdir -p feeds
