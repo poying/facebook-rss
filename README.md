@@ -1,3 +1,5 @@
+[![Build Status](https://drone.io/github.com/poying/facebook-rss/status.png)](https://drone.io/github.com/poying/facebook-rss/latest)
+
 ### 新增 page id
 
 `Makefile` 的 `LIST` 變數設定 page id，每個 id 用空白分隔
