@@ -13,7 +13,7 @@ $ make install
 
 ### 使用
 
-> 搭配 IFTTT、drone.io、GitHub Pages 每隔幾小時自動重新產生 RSS
+> 搭配 IFTTT、drone.io、GitHub Pages 每隔幾小時自動重新產生 RSS（[範例](https://github.com/poying/facebook-rss/tree/gh-pages)）
 
 ```bash
 $ # 取得 facebook token
