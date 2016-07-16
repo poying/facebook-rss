@@ -19,6 +19,7 @@ feeds:
 install:
 	@wget https://github.com/poying/facebook-rss/releases/download/v0.1.0.0/facebook-rss-linux
 	@mv facebook-rss-linux fb-rss
+	@chmod 755 ./fb-rss
 
 clean:
 	@-rm -rf facebook-rss fb-rss feeds
