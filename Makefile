@@ -1,7 +1,7 @@
 PREFIX := /usr/bin
 
 build:
-	@cabal configure && cabal build
+	@cabal install --only-dependencies && cabal configure && cabal build
 
 clean:
 	@cabal clean
