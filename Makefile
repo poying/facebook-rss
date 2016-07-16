@@ -1,4 +1,4 @@
-LIST := freemarketfreepeople
+LIST := freemarketfreepeople bloggerYangSzuPang
 TARGETS := $(addprefix feeds/,$(LIST))
 
 all: generate push
