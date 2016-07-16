@@ -1,16 +1,6 @@
 LIST := freemarketfreepeople bloggerYangSzuPang sophist4ever
 TARGETS := $(addprefix feeds/,$(LIST))
 
-all: generate push
-
-push:
-	@git add feeds
-	@status=$$(git status -uno --porcelain); \
-		if [[ "$${status}" ]]; then \
-			git commit -m "$$(date "+%Y-%m-%d %H:%M:%S")"; \
-			git push; \
-		fi
-
 generate: install $(TARGETS)
 
 feeds/%: feeds
