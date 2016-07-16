@@ -5,8 +5,11 @@ all: generate push
 
 push:
 	@git add feeds
-	@git commit -m "$$(date "+%Y-%m-%d %H:%M:%S")"
-	@git push
+	@status=$$(git status -uno --porcelain); \
+		if [[ "$${status}" ]]; then \
+			git commit -m "$$(date "+%Y-%m-%d %H:%M:%S")"; \
+			git push; \
+		fi
 
 generate: install $(TARGETS)
 
