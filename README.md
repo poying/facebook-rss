@@ -21,3 +21,9 @@ $ curl "https://graph.facebook.com/v2.7/oauth/access_token?client_id=<app_id>&cl
 $ # 產生 rss
 $ facebook-rss --token <access_token> --id <page_id>
 ```
+
+### 為什麼寫這個專案？
+
+Facebook 靠北啊，不給 RSS 啊，幹！
+
+也順便試一下用 Haskell 寫程式，看看他的工具用起來順不順手
