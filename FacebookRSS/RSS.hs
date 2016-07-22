@@ -35,6 +35,6 @@ feedToRSS feed =
             [ Title . getFirstLine . Post.message $ post
             , Link . fromJust . parseURI . Post.link $ post
             , Description . autoLinks . Post.message $ post
-            , Guid True . Post.id $ post
+            , Guid False . Post.id $ post
             , PubDate . parseDate . Post.createdTime $ post
             ]
