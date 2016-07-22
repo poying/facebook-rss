@@ -18,5 +18,5 @@ tests = describe "Data.Facebook"
       (decode "{\"name\":\"Google\",\"about\":\"QAQ\",\"link\":\"http://google.com\",\"feed\":{\"data\":[]}}")
   , it $ assertEqual "parse post"
       (Just $ Post "id" "hello" "http://google.com" "2016-07-14T21:05:25+0000")
-      (decode "{\"id\": \"id\",\"message\":\"hello\",\"link\":\"http://google.com\",\"created_time\":\"2016-07-14T21:05:25+0000\"}")
+      (decode "{\"id\": \"id\",\"message\":\"hello\",\"permalink_url\":\"http://google.com\",\"created_time\":\"2016-07-14T21:05:25+0000\"}")
   ]
