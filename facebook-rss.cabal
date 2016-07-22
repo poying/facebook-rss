@@ -21,7 +21,8 @@ executable facebook-rss
     network-uri ==2.6.0.3,
     http-client,
     http-client-tls,
-    bytestring
+    bytestring,
+    regex-compat
   default-language: Haskell2010
 
 test-suite test
@@ -43,6 +44,7 @@ test-suite test
     network-uri ==2.6.0.3,
     http-client,
     http-client-tls,
-    bytestring
+    bytestring,
+    regex-compat
   type: exitcode-stdio-1.0
   default-language: Haskell2010

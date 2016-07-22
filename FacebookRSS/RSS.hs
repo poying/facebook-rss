@@ -2,6 +2,7 @@ module FacebookRSS.RSS (fromFeed) where
 
 
 import Text.RSS
+import Text.Regex (subRegex, mkRegex)
 import Data.Time
 import Data.Time.Format (parseTime, defaultTimeLocale)
 import Data.Maybe (maybe, fromJust)
@@ -33,7 +34,12 @@ feedToRSS feed =
           postToRssArticle post =
             [ Title . getFirstLine . Post.message $ post
             , Link . fromJust . parseURI . Post.link $ post
-            , Description . Post.message $ post
+            , Description . autoLinks . Post.message $ post
             , Guid True . Post.id $ post
             , PubDate . parseDate . Post.createdTime $ post
             ]
+
+
+autoLinks :: String -> String
+autoLinks msg =
+  subRegex (mkRegex "https?://[^\\s]+") msg "<a href=\"\\0\">\\0</a>"
