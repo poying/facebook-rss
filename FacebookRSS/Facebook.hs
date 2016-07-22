@@ -4,7 +4,6 @@
 module FacebookRSS.Facebook (fetchFeed) where
 
 
-import Debug.Trace
 import Data.Maybe
 import Data.Aeson
 import Data.Facebook.Feed
